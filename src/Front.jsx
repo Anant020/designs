@@ -66,7 +66,7 @@ function Front() {
     useEffect(() => {
         setloading(true);
         axios
-            .get('http://localhost:8000/users')
+            .get('https://mongo-backend-dmzi.onrender.com/users')
             .then((response) => {
                 setMongoData(response.data);
                 setloading(false);
@@ -107,7 +107,7 @@ function Front() {
     function sendDataToServer() {
 
         axios
-            .post('http://localhost:8000/users', data)
+            .post('https://mongo-backend-dmzi.onrender.com/users', data)
             .then(() => {
                 console.log("Data submitted", data);
                 setRefreshData(prev => !prev);
@@ -121,7 +121,7 @@ function Front() {
     function DeleteDataToServer(id) {
 
         axios
-            .delete(`http://localhost:8000/users/${id}`)
+            .delete(`https://mongo-backend-dmzi.onrender.com/users/${id}`)
             .then(() => {
                 console.log("Data deleted", data);
                 setRefreshData(prev => !prev);
@@ -135,7 +135,7 @@ function Front() {
     function EditDataToServer(index) {
         const Userid = mongoData[index]._id; // This is a little tricky
         axios
-            .put(`http://localhost:8000/users/${Userid}`, Updatedata)
+            .put(`https://mongo-backend-dmzi.onrender.com/users/${Userid}`, Updatedata)
             .then(() => {
                 console.log("Data Edited", data);
                 setRefreshData(prev => !prev);
