@@ -74,7 +74,7 @@ function Front() {
             })
             .catch((error) => {
                 console.log(error);
-                setloading(false);
+                // setloading(false);
             });
 
     }, [refreshData]);
